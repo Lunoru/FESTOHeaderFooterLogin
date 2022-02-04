@@ -17,6 +17,6 @@ export const SignInButton = () => {
     const { instance } = useMsal();
 
     return (
-        <a href="#" className="logIn" onClick={() => handleLogin(instance)}><FontAwesomeIcon con className="UserIcon" icon={faUser}> </FontAwesomeIcon> Sign in</a>
+        <a href="#" className="logIn" onClick={() => handleLogin(instance)}><FontAwesomeIcon con className="UserIcon" icon={faUser}> </FontAwesomeIcon> Log in</a>
     );
 }

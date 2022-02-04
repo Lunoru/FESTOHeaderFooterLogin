@@ -1,6 +1,6 @@
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import React from "react";
+import React, {useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
 import {useIsAuthenticated, useMsal} from "@azure/msal-react";
@@ -13,6 +13,11 @@ const Header = (props) =>{
     const {accounts} = useMsal();
     const isAuthenticated = useIsAuthenticated();
     const name = accounts[0] && accounts[0].name;
+    const token = accounts[0] && accounts[0].idTokenClaims["roles"];
+
+    console.log(token)
+
+
     return(<header>
                 <Navbar className="container navigation navbar">
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -21,7 +26,7 @@ const Header = (props) =>{
                         <NavigationBar/>
                     </Navbar.Collapse>
                     <Nav className="log-in-festo" href="#">
-                        {name}{ isAuthenticated ? <SignOutButton /> : <SignInButton />}
+                      { isAuthenticated ? <SignOutButton /> : <SignInButton />}{token}
                     </Nav>
                         <a href="https://www.festo.com/us/en/" className="navigation__logo">
                             <img className="logo" src="https://www.festo.com/_ui/responsive/theme-lambda/fox/img/svg/logo_blue.svg" alt="#"/>
