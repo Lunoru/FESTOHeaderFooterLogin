@@ -19,9 +19,9 @@ const App = ({ instance }) => {
     return (
         <Router>
             <MsalProvider instance={instance}>
-                <PageLayout>
-                    <Main />
-                </PageLayout>
+                <PageLayout />
+
+
             </MsalProvider>
         </Router>
     );

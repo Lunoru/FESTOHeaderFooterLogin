@@ -11150,9 +11150,12 @@ textarea.form-control-lg {
   width: 100%;
   height: 0;
   left: 0;
-  bottom: -25px;
+  bottom: -26.3px;
   /* <- distance */
   border-bottom: #0587cb 5px solid;
+}
+.container-fluid header .headerHome:hover, .container-sm header .headerHome:hover, .container-md header .headerHome:hover, .container-lg header .headerHome:hover, .container-xl header .headerHome:hover, .container-xxl header .headerHome:hover {
+  color: #0587cb;
 }
 .container-fluid header .logIn, .container-sm header .logIn, .container-md header .logIn, .container-lg header .logIn, .container-xl header .logIn, .container-xxl header .logIn {
   margin-right: 20px;
@@ -11161,6 +11164,10 @@ textarea.form-control-lg {
 .container-fluid header .UserIcon, .container-sm header .UserIcon, .container-md header .UserIcon, .container-lg header .UserIcon, .container-xl header .UserIcon, .container-xxl header .UserIcon {
   height: 12px;
   vertical-align: 0;
+}
+
+.h1test {
+  text-align: center;
 }
 
 .testText {
