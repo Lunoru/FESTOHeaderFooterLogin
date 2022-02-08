@@ -2,8 +2,8 @@ import {Navbar} from "react-bootstrap";
 import {PageLayout} from "../ButtonsLayout/ButtonsLayout";
 import {AuthenticatedTemplate, UnauthenticatedTemplate} from "@azure/msal-react";
 
-export const RequestNav = () =>{
-    return (
+export const StudTeachNav = () =>{
+    return(
         <>
             <Navbar>
                 <PageLayout>
@@ -12,18 +12,14 @@ export const RequestNav = () =>{
                     </div>
                     <AuthenticatedTemplate>
                         <div className="link-festo">
-                            <a className="headerHome" href="/profile">New requests</a>
+                            <a className="headerHome" href="#">Learning History</a>
                         </div>
                         <div className="link-festo">
-                            <a className="headerHome" href="/profile">Learning history</a>
-                        </div>
-                        <div className="link-festo">
-                            <a className="headerHome" href="/profile">Help</a>
+                            <a className="headerHome" href="#">Help</a>
                         </div>
                     </AuthenticatedTemplate>
                 </PageLayout>
             </Navbar>
         </>
-
     )
 }
