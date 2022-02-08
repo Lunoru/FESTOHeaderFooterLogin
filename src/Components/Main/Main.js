@@ -9,7 +9,7 @@ import {Home} from "../../Pages/Home";
 const Pages = () => {
     return (
         <Routes>
-            <Route path="/home" element={<Home />}/>
+            <Route path="/" element={<Home />}/>
             <Route path="/profile" element={<Profile />}/>
             <Route path="/hello" element={ <Hello />}/>
         </Routes>
