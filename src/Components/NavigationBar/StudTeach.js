@@ -12,10 +12,10 @@ export const StudTeachNav = () =>{
                     </div>
                     <AuthenticatedTemplate>
                         <div className="link-festo">
-                            <a className="headerHome" href="#">Learning History</a>
+                            <a className="headerHome" href="/LearningHistory">Learning History</a>
                         </div>
                         <div className="link-festo">
-                            <a className="headerHome" href="#">Help</a>
+                            <a className="headerHome" href="/help">Help</a>
                         </div>
                     </AuthenticatedTemplate>
                 </PageLayout>

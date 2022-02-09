@@ -62,9 +62,13 @@ export const loginRequest = {
  * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/resources-and-scopes.md
  */
 export const protectedResources = {
+    // RoleAssign:{
+    //     endpoint: "https://graph.microsoft.com/AppRoleAssignment.ReadWrite.All",
+    //     scope: ["AppRoleAssignment.ReadWrite.All"]
+    // },
     graphMe: {
-        endpoint: "https://graph.microsoft.com/v1.0/me",
-        scopes: ["User.Read"],
+        endpoint: "https://graph.microsoft.com/v1.0/users",
+        scopes: ["User.ReadBasic.All"],
     },
     apiHello: {
         endpoint: "https://localhost:44345/WeatherForecast",

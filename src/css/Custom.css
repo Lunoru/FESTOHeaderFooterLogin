@@ -11174,6 +11174,11 @@ textarea.form-control-lg {
   vertical-align: 0;
 }
 
+.mailDiv {
+  width: 20%;
+  height: 625px;
+}
+
 .h1test {
   text-align: center;
 }

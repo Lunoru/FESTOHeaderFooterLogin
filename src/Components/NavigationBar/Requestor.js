@@ -12,13 +12,13 @@ export const RequestNav = () =>{
                     </div>
                     <AuthenticatedTemplate>
                         <div className="link-festo">
-                            <a className="headerHome" href="/profile">New requests</a>
+                            <a className="headerHome" href="/NewRequest">New requests</a>
                         </div>
                         <div className="link-festo">
-                            <a className="headerHome" href="/profile">Learning history</a>
+                            <a className="headerHome" href="/LearningHistory">Learning history</a>
                         </div>
                         <div className="link-festo">
-                            <a className="headerHome" href="/profile">Help</a>
+                            <a className="headerHome" href="/Help">Help</a>
                         </div>
                     </AuthenticatedTemplate>
                 </PageLayout>

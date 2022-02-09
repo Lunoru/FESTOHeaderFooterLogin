@@ -9,12 +9,11 @@ import {StudTeachNav} from "./StudTeach";
 import {RequestNav} from "./Requestor";
 
 export const NavigationBar = () => {
-    const isAuthenticated = useIsAuthenticated();
+
     const {accounts} = useMsal();
-    const token = accounts[0] && accounts[0].idTokenClaims
     const role = accounts[0] && accounts[0].idTokenClaims["roles"][0];
 
-console.log(role)
+
     /**
      * Most applications will need to conditionally render certain components based on whether a user is signed in or not.
      * msal-react provides 2 easy ways to do this. AuthenticatedTemplate and UnauthenticatedTemplate components will
