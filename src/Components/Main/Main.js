@@ -9,6 +9,7 @@ import {Help} from "../../Pages/Help";
 import {ClassroomManage} from "../../Pages/ClassroomManage";
 import {NewRequest} from "../../Pages/NewRequest";
 import {LearningHistory} from "../../Pages/LearningHistory";
+import {ReqApprove} from "../../Pages/ReqApprove";
 
 const Pages = () => {
 
@@ -27,6 +28,7 @@ const Pages = () => {
             <Route path="/" element={<Start />}/>
             <Route path="/profile" element={<Profile />}/>
             <Route path="/hello" element={ <Hello />}/>
+            <Route path="/ReqApprove" element={ <ReqApprove />}/>
 
         </Routes>
     )}else if(role === "Requestor"){

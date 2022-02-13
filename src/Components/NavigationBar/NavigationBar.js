@@ -1,12 +1,13 @@
 import {AuthenticatedTemplate, UnauthenticatedTemplate, useIsAuthenticated, useMsal} from "@azure/msal-react";
 
-import { Nav, Navbar, Button,} from "react-bootstrap";
+import {Navbar} from "react-bootstrap";
 
 import { loginRequest } from "../../authConfig";
 import {PageLayout} from "../ButtonsLayout/ButtonsLayout";
 import {CordNav} from "./Coordinator";
 import {StudTeachNav} from "./StudTeach";
 import {RequestNav} from "./Requestor";
+import {NavLink} from "react-router-dom";
 
 export const NavigationBar = () => {
 
@@ -50,7 +51,7 @@ export const NavigationBar = () => {
                     <Navbar>
                         <PageLayout>
                             <div className="link-festo">
-                                <a className="headerHome" href="/home">Home</a>
+                                <NavLink className={"headerHome"} activeClassName={"active"} to="/home">Home</NavLink>
                             </div>
                         </PageLayout>
                     </Navbar>

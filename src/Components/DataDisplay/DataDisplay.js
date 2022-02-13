@@ -35,9 +35,9 @@ import Output from "../Output/Output";
 export const ProfileData = (props) => {
 
     let tableRows = [];
-    //   for (let x = 0; x <= 29; x++) {
-    //     tableRows.push(<li>{props.graphData.value[x].mail}</li>)
-    // }
+      for (let x = 0; x <= 29; x++) {
+        tableRows.push(<li>{props.graphData.value[x].mail}</li>)
+    }
 
     return (
         <>
@@ -51,11 +51,11 @@ export const ProfileData = (props) => {
                 <p>Contents of the <strong>response</strong> is below:</p>
             </div>
             <div className="data-area-div">
-                {/*<div className={"overflow-scroll overflow-hidden mailDiv"}>*/}
+                <div className={"overflow-scroll overflow-hidden mailDiv"}>
                     <ul>
                         {tableRows}
                     </ul>
-                {/*</div>*/}
+                </div>
             </div>
         </>
     );

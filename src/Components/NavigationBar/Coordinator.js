@@ -1,6 +1,7 @@
 import {Navbar} from "react-bootstrap";
 import {PageLayout} from "../ButtonsLayout/ButtonsLayout";
 import {AuthenticatedTemplate, UnauthenticatedTemplate} from "@azure/msal-react";
+import {NavLink} from "react-router-dom";
 
 export const CordNav = () =>{
     return (
@@ -8,26 +9,16 @@ export const CordNav = () =>{
             <Navbar>
                 <PageLayout>
                     <div className="link-festo">
-                        <a className="headerHome" href="/home">Home</a>
+                            <NavLink className={"headerHome"} activeClassName={"active"} to="/home">Home</NavLink>
                     </div>
                     <AuthenticatedTemplate>
                         <div className="link-festo">
-                            <a className="headerHome" href="/NewRequest">New requests</a>
-                        </div>
-                        <div className="link-festo">
-                            <a className="headerHome" href="/ClassroomManage">Classrooms management</a>
-                        </div>
-                        <div className="link-festo">
-                            <a className="headerHome" href="/LearningHistory">Learning history</a>
-                        </div>
-                        <div className="link-festo">
-                            <a className="headerHome" href="/help">Help</a>
-                        </div>
-                        <div className="link-festo">
-                            <a className="headerHome" href="/profile">TestProfile</a>
-                        </div>
-                        <div className="link-festo">
-                            <a className="headerHome" href="/hello">TestAPI</a>
+
+                            <NavLink to="/LearningHistory" className="headerHome" activeClassName='active'>Learning History</NavLink>
+                            <NavLink to="/NewRequest" className="headerHome" activeClassName='active'>New requests</NavLink>
+                            <NavLink to="/ReqApprove" className="headerHome" activeClassName='active'>Request Approval</NavLink>
+                            <NavLink to="/ClassroomManage" className="headerHome" activeclassname='active'>Classrooms management</NavLink>
+                            <NavLink to="/help" className="headerHome" activeClassName='active'>Help</NavLink>
                         </div>
                     </AuthenticatedTemplate>
                 </PageLayout>
