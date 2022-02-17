@@ -10,6 +10,7 @@ import {ClassroomManage} from "../../Pages/ClassroomManage";
 import {NewRequest} from "../../Pages/NewRequest";
 import {LearningHistory} from "../../Pages/LearningHistory";
 import {ReqApprove} from "../../Pages/ReqApprove";
+import {Denied} from "../../Pages/Denied";
 
 const Pages = () => {
 
@@ -57,9 +58,10 @@ const Pages = () => {
 }
 
 const Main = () =>{
-    return(<main className="mainPage">
-    <Pages/>
-    </main>
-    )
+        return(<main className="mainPage">
+                <Pages/>
+            </main>
+        )
+    
 }
 export default Main

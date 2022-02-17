@@ -3,7 +3,9 @@ import {PageLayout} from "../ButtonsLayout/ButtonsLayout";
 import {AuthenticatedTemplate, UnauthenticatedTemplate} from "@azure/msal-react";
 import {NavLink} from "react-router-dom";
 
+
 export const CordNav = () =>{
+
     return (
         <>
             <Navbar>
@@ -13,12 +15,11 @@ export const CordNav = () =>{
                     </div>
                     <AuthenticatedTemplate>
                         <div className="link-festo">
-
                             <NavLink to="/LearningHistory" className="headerHome" activeClassName='active'>Learning History</NavLink>
                             <NavLink to="/NewRequest" className="headerHome" activeClassName='active'>New requests</NavLink>
                             <NavLink to="/ReqApprove" className="headerHome" activeClassName='active'>Request Approval</NavLink>
-                            <NavLink to="/ClassroomManage" className="headerHome" activeclassname='active'>Classrooms management</NavLink>
                             <NavLink to="/help" className="headerHome" activeClassName='active'>Help</NavLink>
+                            <NavLink to="/ClassroomManage" className="headerHome" activeclassname='active'>Classrooms management</NavLink>
                         </div>
                     </AuthenticatedTemplate>
                 </PageLayout>

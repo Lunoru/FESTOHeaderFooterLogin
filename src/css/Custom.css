@@ -11184,17 +11184,26 @@ textarea.form-control-lg {
   vertical-align: 0;
 }
 
+.den {
+  text-align: center;
+}
+.den .accessDen {
+  margin-bottom: 15%;
+}
+
 table {
   display: block;
   height: 400px;
   overflow-y: scroll;
   width: 100%;
+  margin-bottom: 50%;
 }
 table thead {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
   background-color: #e5e5e5;
+  z-index: 10;
 }
 table thead th:after,
 table thead th:before {
@@ -11210,9 +11219,6 @@ table thead th:before {
 table thead th:after {
   bottom: -1px;
   border-bottom: 2px solid black;
-}
-table td {
-  z-index: -1;
 }
 
 .mailDiv {

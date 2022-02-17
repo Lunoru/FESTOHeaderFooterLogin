@@ -33,11 +33,24 @@ import Output from "../Output/Output";
 // }
 
 export const ProfileData = (props) => {
+    // let roleId = [];
+
+
 
     let tableRows = [];
-      for (let x = 0; x <= 29; x++) {
-        tableRows.push(<li>{props.graphData.value[x].mail}</li>)
-    }
+    // for (let x = 0; x <= 10; x++) {
+
+        // roleId = props.graphData.value[x].appRoleId
+
+        // if (roleId == "2c305373-5d7b-4c11-b134-4b6ffc88999c")
+        // {
+            tableRows.push(<li>{props.graphData.value}</li>)
+            console.log(tableRows)
+        // }
+
+    // }
+
+
 
     return (
         <>
