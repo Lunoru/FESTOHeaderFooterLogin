@@ -11,7 +11,7 @@ import {NewRequest} from "../../Pages/NewRequest";
 import {LearningHistory} from "../../Pages/LearningHistory";
 import {ReqApprove} from "../../Pages/ReqApprove";
 import {Denied} from "../../Pages/Denied";
-// Akademija20
+
 const Pages = () => {
 
     const {accounts} = useMsal();
