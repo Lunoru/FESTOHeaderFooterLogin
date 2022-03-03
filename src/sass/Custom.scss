@@ -82,7 +82,7 @@
 }
 table{
   display: block;
-  height:400px;
+  height:800px;
   overflow-y:scroll;
   width:100%;
   thead{
@@ -110,10 +110,10 @@ table{
     }
   }
 }
-  .mailDiv{
-    width: 20%;
-    height: 625px;
-  }
+.mailDiv{
+  width: 20%;
+  height: 625px;
+}
 .h1test{
   text-align: center;
 }
@@ -166,4 +166,56 @@ footer{
     padding-top: 1rem;
 
   }
+}
+
+.formU {
+  height: 460px;
+  margin-bottom: 40px;
+}
+
+.formR {
+  height: 200px;
+}
+.search {
+  margin-top: 25px;
+  width: 32%
+}
+.hText {
+  margin-top: 10px;
+}
+
+.hLabel {
+  margin: 10px 0 10px 0;
+}
+
+.btn-group-vertical {
+  margin-top: 90px;
+  margin-bottom: 85px;
+}
+
+.commentForm {
+  height: 200px;
+}
+
+.buttonDiv {
+
+}
+
+.nRDiv {
+  margin-top: 35px;
+  margin-bottom: 15px;
+  margin-left: 30px;
+}
+
+.nRCDiv {
+  margin-top: 35px;
+}
+
+.nRCBDiv {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.nRBDiv {
+  margin-top: 40px;
 }

@@ -1,28 +1,70 @@
 import "react-bootstrap"
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import initialRequests from "../Data/data";
 import Request from "../Components/Output/Request";
+import {loginRequest} from "../authConfig";
+import {useMsal} from "@azure/msal-react";
 
 export const ReqApprove = () => {
-    const [requestList, setRequest] = useState(initialRequests)
+    const { instance, accounts} = useMsal();
+    const [accessToken, setAccessToken] = useState(null);
 
-    const staticRequest = requestList.map(
-        req => <Request id={req.id}
-                        person={req.person}
+    const [requestList, setRequest] = useState([])
+
+    const bearer =`Bearer ${accessToken}`;
+    const apiEndpoint = `https://localhost:44345/api/request/requests`;
+
+    const optionsGet = {
+        method: "GET",
+        headers: {
+            'Authorization': bearer}
+    };
+
+    const request = {
+        ...loginRequest,
+        account: accounts[0],
+        scopes: ["api://e6bd4d2e-eda0-4d5c-8163-390ee6487bb7/access_as_user"]
+    };
+
+    // Silently acquires an access token which is then attached to a request for Microsoft Graph data
+    useEffect (()=>{
+        instance.acquireTokenSilent(request).then((response) => {
+            setAccessToken(response.accessToken);
+        }).catch((e) => {
+            instance.acquireTokenPopup(request).then((response) => {
+                setAccessToken(response.accessToken);
+            });
+        })
+    }, []);
+
+    if (requestList.length === 0) {
+        fetch(apiEndpoint, optionsGet)
+            .then(response => response.json())
+            .then(data => setRequest(data))
+            .catch(error => console.log(error));
+    }
+
+
+    const staticRequest = (requestList.map(
+        req => <Request id={req.requestId}
+                        person={req.studentName}
+                        personId={req.studentId}
                         language={req.language}
-                        cost={req.costCentre}
+                        cost={req.costCenter}
                         target={req.target}
                         sem={req.semester}
                         com={req.comments}
-        />)
+                        approve={req.approval}
+        />))
 
+    //console.log(staticRequest);
     return (
         <div className={"container"}>
             <div>
-                <h4 className="testText"> New Request Approval</h4>
+                <h4 className="hText"> New Request Approval</h4>
             </div>
             <table className="table table-bordered table-striped square border">
-                <thead className=" text-center">
+                <thead className="text-center">
                 <tr>
                     <th width="15%">Person</th>
                     <th width="5%">Language</th>
@@ -33,7 +75,7 @@ export const ReqApprove = () => {
                     <th width="5%">Actions</th>
                 </tr>
                 </thead>
-                <tbody className="align-middle ">
+                <tbody className="align-middle">
                 {staticRequest}
                 </tbody>
             </table>

@@ -5,6 +5,7 @@
 
 import { LogLevel } from "@azure/msal-browser";
 
+
 /**
  * Configuration object to be passed to MSAL instance on creation.
  * For a full list of MSAL.js configuration parameters, visit:
@@ -19,7 +20,7 @@ export const msalConfig = {
         navigateToLoginRequestUrl: false, // If "true", will navigate back to the original request location before processing the auth code response.
     },
     cache: {
-        cacheLocation: "sessionStorage", // Configures cache location. "sessionStorage" is more secure, but "localStorage" gives you SSO between tabs.
+        cacheLocation: "localStorage", // Configures cache location. "sessionStorage" is more secure, but "localStorage" gives you SSO between tabs.
         storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
     },
     system: {
@@ -62,25 +63,17 @@ export const loginRequest = {
  * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/resources-and-scopes.md
  */
 export const protectedResources = {
-    // RoleAssign:{
-    // endpoint: "https://graph.microsoft.com/beta/servicePrincipals/070c38b3-d8cd-4aae-97b7-e49d01a98507/appRoleAssignedTo",
-    // scopes: ["AppRoleAssignment.ReadWrite.All"],
-    // },
     graphMe: {
-        // endpoint: "https://graph.microsoft.com/v1.0/users",
-        // scopes: ["User.ReadBasic.All"],
-
-        // endpoint: "https://graph.microsoft.com/beta/servicePrincipals/070c38b3-d8cd-4aae-97b7-e49d01a98507/appRoleAssignedTo",
-
-        // endpoint: "https://graph.microsoft.com/v1.0/me/messages?$top=5",
-        // scopes: ["User.ReadBasic.All"],
-
-        endpoint: "https://graph.microsoft.com/beta/users/a7faa43c-0917-4deb-a6a9-b78e568ab2fd/appRoleAssignments",
+        endpoint: "https://graph.microsoft.com/beta/users?$top=999", // gauni userius is KITM AD
+        //endpoint: "https://graph.microsoft.com/beta/users/a7faa43c-0917-4deb-a6a9-b78e568ab2fd/appRoleAssignments?$filter=resourceId eq 070c38b3-d8cd-4aae-97b7-e49d01a98507",
         scopes: ["AppRoleAssignment.ReadWrite.All"],
-
     },
     apiHello: {
         endpoint: "https://localhost:44345/WeatherForecast",
-        scopes: ["api://10102980-cc72-48f6-afef-0cf1dc3f0048/access_as_user"], // e.g. api://xxxxxx/access_as_user
+        scopes: ["api://e6bd4d2e-eda0-4d5c-8163-390ee6487bb7/access_as_user"], // e.g. api://xxxxxx/access_as_user
     },
+    appUsers:{
+        endpoint: "https://graph.microsoft.com/v1.0/servicePrincipals/070c38b3-d8cd-4aae-97b7-e49d01a98507/appRoleAssignedTo?$top=999", // duoda visus app userius
+        scopes: ["AppRoleAssignment.ReadWrite.All"]
+    }
 }

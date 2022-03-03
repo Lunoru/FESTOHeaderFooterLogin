@@ -11,6 +11,8 @@ import {NewRequest} from "../../Pages/NewRequest";
 import {LearningHistory} from "../../Pages/LearningHistory";
 import {ReqApprove} from "../../Pages/ReqApprove";
 import {Denied} from "../../Pages/Denied";
+import RoleManagement from "../../Pages/RoleManagement";
+import {ListAppUsers} from "../../Pages/ListAppUsers";
 
 const Pages = () => {
 
@@ -30,15 +32,17 @@ const Pages = () => {
     return (
 
         <Routes>
-                <Route path="/home" element={<Home />}/>
-                <Route path="/NewRequest" element={<NewRequest />}/>
-                <Route path="/ClassroomManage" element={<ClassroomManage />}/>
-                <Route path="/LearningHistory" element={<LearningHistory />}/>
-                <Route path="/help" element={<Help />}/>
-                <Route path="/" element={<Start />}/>
-                <Route path="/profile" element={<Profile />}/>
-                <Route path="/hello" element={ <Hello />}/>
-                <Route path="/ReqApprove" element={ <ReqApprove />}/>
+            <Route path="/home" element={<Home />}/>
+            <Route path="/NewRequest" element={<NewRequest />}/>
+            <Route path="/ClassroomManage" element={<ClassroomManage />}/>
+            <Route path="/LearningHistory" element={<LearningHistory />}/>
+            <Route path="/help" element={<Help />}/>
+            <Route path="/" element={<Start />}/>
+            <Route path="/profile" element={<Profile />}/>
+            <Route path="/hello" element={ <Hello />}/>
+            <Route path="/ReqApprove" element={ <ReqApprove />}/>
+            <Route path="/ListAppUsers" element={ <ListAppUsers />}/>
+            <Route path="/role" element={<RoleManagement/>}/>
         </Routes>
 
     )}else if(role == "Requestor"){
@@ -52,16 +56,16 @@ const Pages = () => {
     }else if (role == "Student") {
         return (<Routes>
             <Route path="/home" element={<Home />}/>
-            <Route path="/help" element={<Help />}/>
             <Route path="/LearningHistory" element={<LearningHistory />}/>
+            <Route path="/help" element={<Help />}/>
             <Route path="/" element={<Start />}/>
             </Routes>)
 
     }else if (role == "Teacher"){
         return (<Routes>
             <Route path="/home" element={<Home />}/>
-            <Route path="/help" element={<Help />}/>
             <Route path="/LearningHistory" element={<LearningHistory />}/>
+            <Route path="/help" element={<Help />}/>
             <Route path="/" element={<Start />}/>
         </Routes>)
     }else{

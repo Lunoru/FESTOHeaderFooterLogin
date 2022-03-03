@@ -19,6 +19,7 @@ export const CordNav = () =>{
                             <NavLink to="/ClassroomManage" id={"classMan"} className="headerHome" activeclassname='active'>Classrooms management</NavLink>
                             <NavLink to="/LearningHistory" id={"learnHis"} className="headerHome" activeClassName='active'>Learning History</NavLink>
                             <NavLink to="/ReqApprove" className="headerHome" id={"ReqApp"} activeClassName='active'>Request Approval</NavLink>
+                            <NavLink to="/role" className="headerHome" id={"roleManage"} activeClassName='active'>Role Management</NavLink>
                             <NavLink to="/help" className="headerHome" id={"help"} activeClassName='active'>Help</NavLink>
                         </div>
                     </AuthenticatedTemplate>
